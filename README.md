@@ -64,7 +64,7 @@ npm install -g webpack
 npm install
 ```
 
-### CRUD API POSTGRESQL
+### CRUD API
 
 Create/POST:
 ```
@@ -83,23 +83,4 @@ server.put('/api/:id/reservation')
 Delete/DELETE:
 ```
 server.delete('/api/:id/reservation')
-```
-
-## CRUD API MONGODB
-
-Create/POST:
-```
-
-```
-Read/GET:
-```
-
-```
-Update/PUT:
-```
-
-```
-Delete/DELETE:
-```
-
 ```
