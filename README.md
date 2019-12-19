@@ -63,3 +63,43 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
+### CRUD API POSTGRESQL
+
+Create/POST:
+```
+server.post('/api/:id/reservation')
+server.post('/api/:id/user')
+```
+Read/GET:
+```
+server.get('/api/:id')
+server.get('/api/:id/search')
+```
+Update/PUT:
+```
+server.put('/api/:id/reservation')
+```
+Delete/DELETE:
+```
+server.delete('/api/:id/reservation')
+```
+
+## CRUD API MONGODB
+
+Create/POST:
+```
+
+```
+Read/GET:
+```
+
+```
+Update/PUT:
+```
+
+```
+Delete/DELETE:
+```
+
+```
