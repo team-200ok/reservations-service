@@ -26,7 +26,8 @@
     "seed": "node server/seedDatabase.js",
     "start": "node server/start.js",
     "start-dev": "nodemon server/start.js",
-    "test": "TEST=true jest --silent --coverage"
+    "test": "TEST=true jest --silent --coverage",
+    "seedMongo": "node server/seedMongo.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -35,6 +36,7 @@
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
+    "mongoose": "^5.8.2",
     "mysql": "^2.17.1",
     "mysql2": "^2.0.1",
     "nodemon": "^2.0.1",
