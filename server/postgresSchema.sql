@@ -2,10 +2,11 @@ CREATE SCHEMA ReservationsModule;
 
 CREATE TABLE ReservationsModule.Restaurants (
   id int not null unique,
-  name str,
+  name text,
   open time,
   close time,
-  num_seats int
+  num_seats tinyint,
+  reservations int
 )
 
 CREATE TABLE ReservationsModule.Reservations (
@@ -14,10 +15,17 @@ CREATE TABLE ReservationsModule.Reservations (
   user_id int,
   date date,
   time time,
-  party_size tinyint
+  party_size tinyint,
+  FOREIGN KEY (restaurant_id) REFERENCES (restaurants),
+  FOREIGN KEY (user_id) REFERENCES (users)
 )
 
 CREATE TABLE ReservationsModule.Users (
   id int not null unique,
-  name str
+  username text,
+  firstName text,
+  lastName text,
+  email text,
+  phoneNumber tinyint,
+  note text
 )
