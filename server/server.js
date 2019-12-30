@@ -4,13 +4,11 @@ const path = require('path');
 const cors = require('cors');
 const controller = require('./controller.js');
 
-
 const server = express();
 server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ urlencoded: true }));
 server.use('/:id', express.static(path.join(__dirname, '../public')));
-
 
 server.get('/api/:id', (req, res) => {
   controller.getInfo(req.params.id)
