@@ -3,6 +3,10 @@ const mongoUri = 'mongodb://localhost/restaurants';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoUri).then(() => console.log('Connected to mango'));
 const seedMongo = require('./seedMongo.js');
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+});
 
 const Schema = mongoose.Schema;
 const restaurantsSchema = new Schema({
