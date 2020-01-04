@@ -27,7 +27,7 @@
     "start": "node server/start.js",
     "start-dev": "nodemon server/start.js",
     "test": "TEST=true jest --silent --coverage",
-    "seedMongo": "node server/seedMongo.js",
+    "seedMongo": "node server/mongoSchema.js",
     "seedPostgres": "node server/seedPostgres.js"
   },
   "dependencies": {

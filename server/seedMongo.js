@@ -6,7 +6,7 @@ const seedMongo = () => {
   let clock = Math.floor(Math.random() * 12) + 1;
   let counter = 0;
   
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 500000; i++) {
     let restaurants = {};
     let seats = [40, 45, 50, 55, 60, 65, 70];
   
@@ -22,7 +22,7 @@ const seedMongo = () => {
     restaurants.close = close;
     restaurants.num_seats = num_seats;
 
-    console.log('ID BOIIIIIIIIIII ', i);
+    console.log('# of Restaurants', i);
     
     let random = Math.floor(Math.random() * 10) + 1;
     
@@ -48,7 +48,7 @@ const seedMongo = () => {
       reservation.user = user;
       
       counter++;
-      console.log('COUUUUUUUUUUNT ', counter);
+      console.log('# of Reservations ', counter);
       reservations.push(reservation);
     }
 

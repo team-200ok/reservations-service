@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 const mongoUri = 'mongodb://localhost/restaurants';
 mongoose.Promise = global.Promise;
-mongoose.connect(mongoUri).then(() => console.log('Connected to mango'));
+mongoose.connect(mongoUri, { useNewUrlParser: true }, { useUnifiedTopology: true }).then(() => console.log('Connected to mango'));
 const seedMongo = require('./seedMongo.js');
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+});
 
 const Schema = mongoose.Schema;
 const restaurantsSchema = new Schema({
@@ -30,7 +34,7 @@ const restaurantsSchema = new Schema({
 const Restaurants = mongoose.model('Restaurants', restaurantsSchema);
 
 const insertData = () => {
-  Restaurants.create(seedMongo())
+  Restaurants.insertMany(seedMongo())
     .then(() => console.log('Got the seed'));
 };
 
