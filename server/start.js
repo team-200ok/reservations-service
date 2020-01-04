@@ -1,3 +1,4 @@
+const newrelic = require('newrelic');
 const server = require('./server.js');
 const db = require('./database.js');
 
