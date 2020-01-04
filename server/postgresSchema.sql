@@ -53,3 +53,5 @@ FROM '/Users/keeyanakellydonaldson/Documents/team-200ok/reservations-service/use
 
 COPY reservations(reservation_id,restaurant_id,user_id,date,time,party_size)
 FROM '/Users/keeyanakellydonaldson/Documents/team-200ok/reservations-service/reservations.csv' DELIMITER ',';
+
+-- CREATE INDEX idx_restaurant_id ON reviews USING HASH (restaurant_id);
