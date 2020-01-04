@@ -3,12 +3,23 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const controller = require('./controller.js');
+const postgresController = require('./postgresController.js');
 
 const server = express();
 server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ urlencoded: true }));
 server.use('/:id', express.static(path.join(__dirname, '../public')));
+
+server.get('/api/test', (req, res) => {
+  postgresController.getReservations.get(req, res);
+});
+
+server.post('/api/test', (req, res) => {
+  postgresController.postReservation.post(req, res);
+})
+
+// Previous controllers below
 
 server.get('/api/:id', (req, res) => {
   controller.getInfo(req.params.id)
@@ -19,7 +30,6 @@ server.get('/api/:id', (req, res) => {
       res.status(500).send(err);
     });
 });
-
 
 server.get('/api/:id/search', (req, res) => {
   controller.getTables(req.params.id, req.query)
