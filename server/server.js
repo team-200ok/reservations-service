@@ -17,7 +17,7 @@ server.get('/api/test', (req, res) => {
 
 server.post('/api/test', (req, res) => {
   postgresController.postReservation.post(req, res);
-})
+});
 
 // Previous controllers below
 

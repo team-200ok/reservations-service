@@ -5,7 +5,7 @@ const pool = new Pool({ database: 'ReservationsModule' })
 module.exports = {
   getReservations: {
     get: (req, res) => {
-      pool.query(`SELECT * FROM reservations limit 5`, (err, result) => {
+      pool.query(`SELECT * FROM reservations limit 1`, (err, result) => {
         if (err) {
           console.error(`Error executing query ${err.stack}`)
           res.status(404).send(err);
@@ -16,10 +16,12 @@ module.exports = {
       })
     }
   },
-  
+
   postReservation: {
     post: (req, res) => {
-      pool.query(`INSERT INTO reservations VALUES (8000004, 70997, 122983, 'Monday', '06:30:00', 2)`, (err, result) => {
+      let id = 8000008;
+      id++;
+      pool.query(`INSERT INTO reservations VALUES (${id}, 10000, 10000, 'Saturday', '06:30:00', 2)`, (err, result) => {
         if (err) {
           console.error(`Error executing query ${err.stack}`)
           res.status(404).send(err);

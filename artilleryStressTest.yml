@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:3010'
+  phases:
+    - duration: 60
+      arrivalRate: 20
+      rampTo: 500
+      name: 'Warm up app: 20 to 500 VU/s for 60 seconds'
+    - duration: 60
+      arrivalRate: 500
+      name: 'Sustain constant arrival of 500 VU/s for 60 seconds'
+scenarios:
+  - flow:
+    - get:
+        url: "/api/test"
