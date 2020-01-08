@@ -11,4 +11,4 @@ config:
 scenarios:
   - flow:
     - get:
-        url: "/api/test"
+        url: "/api/{{ $randomNumber(1,800000) }}"
