@@ -6,3 +6,4 @@ restaurants.csv
 users.csv
 newrelic_agent.log
 server/ReservationsModule.dump
+loader.txt

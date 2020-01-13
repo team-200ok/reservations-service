@@ -12,7 +12,6 @@ const pool = new Pool({
 //   database: 'ReservationsModule'
 // });
 
-
 module.exports = {
   getReservations: {
     get: (req, res) => {
@@ -24,7 +23,7 @@ module.exports = {
           console.error(`Error executing query ${err.stack}`)
           res.status(404).send(err);
         } else {
-          console.log(result.rows);
+          // console.log(result.rows);
           res.status(200).send(result.rows);
         }
       });
