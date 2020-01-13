@@ -9,7 +9,7 @@ const server = express();
 server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ urlencoded: true }));
-server.use('/:id', express.static(path.join(__dirname, '../public')));
+server.use('/', express.static(path.join(__dirname, '../public')));
 
 server.get('/api/:id', (req, res) => {
   postgresController.getReservations.get(req, res);
