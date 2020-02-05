@@ -21,8 +21,6 @@ const seedMongo = () => {
     restaurants.open = open;
     restaurants.close = close;
     restaurants.num_seats = num_seats;
-
-    console.log('# of Restaurants', i);
     
     let random = Math.floor(Math.random() * 10) + 1;
     
@@ -48,7 +46,6 @@ const seedMongo = () => {
       reservation.user = user;
       
       counter++;
-      console.log('# of Reservations ', counter);
       reservations.push(reservation);
     }
 
