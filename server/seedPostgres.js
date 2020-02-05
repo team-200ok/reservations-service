@@ -11,7 +11,6 @@ const writeOneMillionRestaurants = (writer, encoding, callback) => {
   let seats = [40, 45, 50, 55, 60, 65, 70];
 
   const write = () => {
-    console.log(`One million's at ${i}`);
     let ok = true;
 
     do {
@@ -44,6 +43,7 @@ writeOneMillionRestaurants(writeRestaurants, 'utf-8', () => {
   writeRestaurants.end();
 });
 
+
 const writeReservations = fs.createWriteStream('reservations.csv');
 writeReservations.write('id,restaurant_id,user_id,date,time,party_size\n', 'utf8');
 
@@ -52,7 +52,6 @@ writeEightMillionReservations = (writer, encoding, callback) => {
   let id = 0;
 
   const write = () => {
-    console.log(`Eight million's at ${i}`);
     let ok = true;
 
     do {
@@ -84,6 +83,7 @@ writeEightMillionReservations(writeReservations, 'utf-8', () => {
   writeReservations.end();
 })
 
+
 const writeUsers = fs.createWriteStream('users.csv');
 writeUsers.write('id,username,first_name,last_name,email,phone_number, note\n', 'utf8');
 
@@ -92,7 +92,6 @@ writeOneMillionUsers = (writer, encoding, callback) => {
   let id = 0;
 
   const write = () => {
-    console.log(`One million's at ${i}`);
     let ok = true;
 
     do {
