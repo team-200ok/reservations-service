@@ -1,13 +1,6 @@
 # Reservations
 
-This reservations service for YumNoms mimics the interface used for Yelp Restaurants reservations.
-
-## Related Projects
-
-  - https://github.com/yumnoms/reviews-service
-  - https://github.com/yumnoms/popular-dishes-service
-  - https://github.com/yumnoms/photo-carousel-service
-  - https://github.com/yumnoms/Laurence-Nguyen-proxy
+Rebuild of backend of reservation booking system deployed to AWS EC2 T2 micros.
 
 ## Table of Contents
 
@@ -20,18 +13,8 @@ This reservations service for YumNoms mimics the interface used for Yelp Restaur
 
 ### Setting up database/seeding data
 
-For mySQL, if student/student user does not exist,
-run mySQL and run:
-
 ```sh
-CREATE USER 'student'@'localhost' IDENTIFIED BY 'student';
-```
-
-and then in root directory of terminal:
-
-```sh
-mysql -u student -p < server/schema.sql  // password is student
-npm run seed
+npm run seedPostgres
 ```
 
 ### start script
@@ -40,17 +23,11 @@ npm run seed
 npm run start
 ```
 
-### bundle target element id
-
-id="reservations"
-
-
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
 
 ## Development
 
@@ -66,21 +43,7 @@ npm install
 
 ### CRUD API
 
-Create/POST:
-```
-server.post('/api/:id/reservation')
-server.post('/api/:id/user')
-```
 Read/GET:
 ```
 server.get('/api/:id')
-server.get('/api/:id/search')
-```
-Update/PUT:
-```
-server.put('/api/:id/reservation')
-```
-Delete/DELETE:
-```
-server.delete('/api/:id/reservation')
 ```
